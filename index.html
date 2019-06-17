@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CartoDB - Styling</title>
+    <!-- <link rel="stylesheet" href="./leaflet/leaflet.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <script src="./leaflet/leaflet.js"></script> -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-25">
+          <h3 class="mb-1">Style</h3>
+          <p>CHANGE THE VISUALIZATION</p>
+
+          <!-- FILL -->
+          <div class="row mt-10px">
+            <div class="col col-25 m-0 p-0 mt-10px">
+              <span class="">Fill</span>
+            </div>
+            <div class="col col-65 m-0 p-0">
+              <div class="radius-slider-wrap">
+                <span class="radius-slider-val"></span>
+                <input
+                  type="range"
+                  min="1"
+                  max="15"
+                  value="8"
+                  id="radius-slider"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- END FILL -->
+          <!-- STROKE -->
+          <div class="row mt-10px">
+            <div class="col col-25 m-0 p-0 mt-10px">
+              <span class="">STROKE</span>
+            </div>
+            <div class="col col-65 m-0 p-0">
+              <div class="radius-slider-wrap">
+                <span class="stroke-slider-val"></span>
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.1"
+                  value="0.5"
+                  id="stroke-slider"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- END STROKE -->
+          <!-- COLOR -->
+          <div class="row mt-10px">
+            <div class="col col-25 m-0 p-0 mt-10px">
+              <span class="">Color</span>
+            </div>
+            <div class="col col-65 m-0 p-0">
+              <div class="select-wrap">
+                <select name="" id="color-selector">
+                  <option value="#ef4b38">Red</option>
+                  <option value="#138808">Green</option>
+                  <option value="#FFF">White</option>
+                  <option value="#000080">Blue</option>
+                  <option value="#FF9933">Orange</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- END COLOR -->
+        </div>
+        <div class="col col-65">
+          <div id="mapid"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-90">
+          <pre id="geojson-res"></pre>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
