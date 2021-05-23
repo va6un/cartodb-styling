@@ -10,25 +10,49 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
     />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.min.css" integrity="sha512-ENrTWqddXrLJsQS2A86QmvA17PkJ0GVm1bqj5aTgpeMAfDKN2+SIOLpKG8R/6KkimnhTb+VW5qqUHB/r1zaRgg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.Default.min.css" integrity="sha512-fYyZwU1wU0QWB4Yutd/Pvhy5J1oWAwFXun1pt+Bps04WSe4Aq6tyHlT4+MHSJhD8JlLfgLuC4CbCnX5KHSjyCg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="./style.css" />
     <!-- <script src="./leaflet/leaflet.js"></script> -->
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+
+    <!-- marker cluster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/leaflet.markercluster-src.min.js" integrity="sha512-aEMGwcHMGYn+Ctwcw0qhmIsZnjfkZRSBv00CWyTRVQl7KcoQSJHbyYyU2ZldYEUkpI9GMwKCxtmB6YeTHiD2CQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col col-25">
+        <div class="col col-90 mb-1">
           <h3 class="mb-1">Style</h3>
           <p>CHANGE THE VISUALIZATION</p>
 
-          <!-- FILL -->
-          <div class="row mt-10px">
-            <div class="col col-25 m-0 p-0 mt-10px">
-              <span class="">Fill</span>
+          <!-- DATA_SET -->
+          <div class="display-inline width-20-per mt-10px">
+            <div class="m-0 p-0 mt-10px">
+              <span class="">Data</span>
             </div>
-            <div class="col col-65 m-0 p-0">
+            <div class="m-0 p-0">
+              <div class="select-wrap">
+                <select name="" id="data_set_selector">
+                  <option value="populated_places_small">Small places</option>
+                  <option value="lightning_last_15">
+                    Lightning(last 15mints)
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- FILL -->
+          <div class="display-inline width-20-per mt-10px">
+            <!-- <div class="col m-0 p-0 mt-10px">
+              <span class="">Fill</span>
+            </div> -->
+            <div class="m-0 p-0">
               <div class="radius-slider-wrap">
-                <span class="radius-slider-val"></span>
+                <span class="">Fill: </span
+                ><span class="radius-slider-val"></span>
                 <input
                   type="range"
                   min="1"
@@ -41,13 +65,14 @@
           </div>
           <!-- END FILL -->
           <!-- STROKE -->
-          <div class="row mt-10px">
-            <div class="col col-25 m-0 p-0 mt-10px">
+          <div class="display-inline width-20-per mt-10px">
+            <!-- <div class="col col-25 m-0 p-0 mt-10px">
               <span class="">STROKE</span>
-            </div>
-            <div class="col col-65 m-0 p-0">
+            </div> -->
+            <div class="m-0 p-0">
               <div class="radius-slider-wrap">
-                <span class="stroke-slider-val"></span>
+                <span class="">STROKE: </span
+                ><span class="stroke-slider-val"></span>
                 <input
                   type="range"
                   min="0"
@@ -61,11 +86,11 @@
           </div>
           <!-- END STROKE -->
           <!-- COLOR -->
-          <div class="row mt-10px">
-            <div class="col col-25 m-0 p-0 mt-10px">
+          <div class="display-inline width-20-per mt-10px">
+            <div class="m-0 p-0 mt-10px">
               <span class="">Color</span>
             </div>
-            <div class="col col-65 m-0 p-0">
+            <div class="m-0 p-0">
               <div class="select-wrap">
                 <select name="" id="color-selector">
                   <option value="#ef4b38">Red</option>
@@ -79,15 +104,15 @@
           </div>
           <!-- END COLOR -->
         </div>
-        <div class="col col-65">
+        <div class="col col-90">
           <div id="mapid"></div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col col-90">
           <pre id="geojson-res"></pre>
         </div>
-      </div>
+      </div> -->
     </div>
     <script src="./script.js"></script>
   </body>
